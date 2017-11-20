@@ -10,10 +10,11 @@
         android:id="@+id/activity_main_greeting_txt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Bienvenue dans\n TOP Quizz !"
-        android:textSize="25sp"
         android:layout_margin="10dp"
-        android:padding="20dp" />
+        android:padding="20dp"
+        android:text="Bienvenue dans\n TOP Quizz !"
+        android:textAlignment="center"
+        android:textSize="35sp" />
 
     <EditText
         android:id="@+id/activity_main_name_input"
@@ -23,21 +24,38 @@
         android:layout_marginEnd="10dp"
         android:hint="Saisir votre nom"/>
 
-    <Button
-        android:id="@+id/activity_main_play_btn"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:padding="30dp"
-        android:layout_gravity="center_horizontal"
-        android:text="Jouer"/>
-    <Button
-        android:id="@+id/activity_main_historique_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="Historique"
-        android:padding="15dp"
-        android:layout_marginTop="20dp"/>
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp">
+
+        <Button
+            android:id="@+id/activity_main_play_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:padding="30dp"
+            android:layout_marginRight="5dp"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#FFF"
+            android:background="#F86254"
+            android:text="Jouer"/>
+
+        <Button
+            android:id="@+id/activity_main_historique_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:padding="30dp"
+            android:textColor="#FFF"
+            android:background="#F86254"
+            android:text="Score" />
+
+    </LinearLayout>
+
+
 
 </LinearLayout>
