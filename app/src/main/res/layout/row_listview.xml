@@ -12,7 +12,7 @@
         android:id="@+id/row_listview_textview_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text=""
+        android:text="@string/empty"
         android:textSize="30sp" />
 
     <TextView
@@ -20,7 +20,7 @@
         android:layout_alignParentEnd="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text=""
+        android:text="@string/empty"
         android:textAlignment="viewStart"
         android:textSize="30sp"/>
 

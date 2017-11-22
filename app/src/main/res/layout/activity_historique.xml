@@ -1,21 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_historique_relativelayout"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="horizontal"
-
-    tools:context="long_pixel.fr.topquiz.HistoriqueActivity">
+    tools:context="long_pixel.fr.topquiz.Controller.HistoriqueActivity">
 
     <Button
+        android:id="@+id/activity_historique_sorts_score"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
-        android:text="1 à 10"/>
+        android:layout_alignParentStart="true"
+        android:text="@string/activity_historique_sorts_score"/>
     <Button
+        android:id="@+id/activity_historique_sorts_pseudo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="A à Z"/>
+        android:layout_alignParentEnd="true"
+        android:text="@string/activity_historique_sorts_pseudo"/>
 
-</LinearLayout>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/activity_historique_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/activity_historique_sorts_pseudo">
+    </android.support.v7.widget.RecyclerView>
+
+
+
+
+
+</RelativeLayout>
+
+
