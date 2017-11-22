@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">TOP\nQuizz</string>
+    <string name="activity_historique_sorts_score">score</string>
+    <string name="activity_historique_sorts_pseudo">pseudo</string>
+    <string name="activity_main_greeting_txt">Bienvenue dans  TOP Quizz !</string>
+    <string name="activity_main_name_input_hint">Saisir votre nom</string>
+    <string name="activity_main_play_btn">Jouer</string>
+    <string name="activity_main_historique_btn">Score</string>
+    <string name="empty"> </string>
 </resources>
