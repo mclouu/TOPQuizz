@@ -11,7 +11,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import long_pixel.fr.topquiz.HistoriqueActivity;
 import long_pixel.fr.topquiz.Model.User;
 import long_pixel.fr.topquiz.R;
 
