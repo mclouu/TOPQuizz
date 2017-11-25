@@ -51,7 +51,6 @@ public class MainActivity extends AppCompatActivity {
         mPlayButton = findViewById(R.id.activity_main_play_btn);
         mHistoriqueButton = findViewById((R.id.activity_main_historique_btn));
 
-        ifPlayerHasAScore();
 
         mPlayButton.setEnabled(false);
 
@@ -92,6 +91,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivityForResult(myIntent, GAME_ACTIVITY_REQUEST_CODE);
             }
         });
+
+        ifPlayerHasAScore();
     }
 
 
@@ -110,7 +111,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void ifPlayerHasAScore() {
-        if (mPreferences.getInt(PREF_KEY_SCORE, 0) >= 0) {
+        int score = mPreferences.getInt(PREF_KEY_SCORE, 0);
+        if (score != 0){
             mHistoriqueButton.setVisibility(View.VISIBLE);
         }
     }
