@@ -5,6 +5,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.ArrayList;
+
 import long_pixel.fr.topquiz.R;
 
 /**
@@ -13,7 +15,8 @@ import long_pixel.fr.topquiz.R;
 
 public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
 
-
+    ArrayList<String> listePseudo = new ArrayList<>();
+    ArrayList<Integer> listScore = new ArrayList<>();
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -33,10 +36,12 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
     }
 
 
-
     public class ViewHolder extends RecyclerView.ViewHolder {
         public ViewHolder(View itemView) {
+
             super(itemView);
+
+
         }
     }
 }

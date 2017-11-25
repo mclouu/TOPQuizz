@@ -2,8 +2,8 @@ package long_pixel.fr.topquiz.Controller;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (GAME_ACTIVITY_REQUEST_CODE == requestCode && RESULT_OK == resultCode) {
-           int score  = data.getIntExtra(GameActivity.BUNDLE_EXTRA_SCORE, 0);
+            int score = data.getIntExtra(GameActivity.BUNDLE_EXTRA_SCORE, 0);
 
             mPreferences.edit().putInt(PREF_KEY_SCORE, score).apply();
             greetUser();
@@ -46,12 +46,12 @@ public class MainActivity extends AppCompatActivity {
 
         mPreferences = getPreferences(MODE_PRIVATE);
 
-        mGreetingText = (TextView) findViewById(R.id.activity_main_greeting_txt);
-        mNameInput = (EditText) findViewById(R.id.activity_main_name_input);
-        mPlayButton = (Button) findViewById(R.id.activity_main_play_btn);
-        mHistoriqueButton = (Button) findViewById((R.id.activity_main_historique_btn));
+        mGreetingText = findViewById(R.id.activity_main_greeting_txt);
+        mNameInput = findViewById(R.id.activity_main_name_input);
+        mPlayButton = findViewById(R.id.activity_main_play_btn);
+        mHistoriqueButton = findViewById((R.id.activity_main_historique_btn));
 
-
+        ifPlayerHasAScore();
 
         mPlayButton.setEnabled(false);
 
@@ -98,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
     private void greetUser() {
         String firstname = mPreferences.getString(PREF_KEY_FIRSTNAME, null);
 
-        if (null != firstname){
+        if (null != firstname) {
             int score = mPreferences.getInt(PREF_KEY_SCORE, 0);
 
             String fulltext = "Bonjour " + firstname + "!\nVous avez fait " + score + "/10 à votre dernière partie";
@@ -106,6 +106,12 @@ public class MainActivity extends AppCompatActivity {
             mNameInput.setText(firstname);
             mNameInput.setSelection(firstname.length());
             mPlayButton.setEnabled(true);
+        }
+    }
+
+    private void ifPlayerHasAScore() {
+        if (mPreferences.getInt(PREF_KEY_SCORE, 0) >= 0) {
+            mHistoriqueButton.setVisibility(View.VISIBLE);
         }
     }
 }
